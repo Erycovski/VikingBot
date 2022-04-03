@@ -27,7 +27,7 @@ module.exports = {
         hugembed.setDescription(`🤗 ${message.author} Abraçou ${pessoa}`)
         hugembed.setColor("#7a297a")
         hugembed.setImage(randomchoice)
-        hugembed.setThumbnail(message.author.displayAvatarURL({format:"jpeg"}))
+        hugembed.setThumbnail(message.author.displayAvatarURL({format:"jpeg", dynamic: "true"}))
         message.channel.send({embeds: [hugembed]})
     }
 }

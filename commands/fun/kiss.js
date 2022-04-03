@@ -25,7 +25,7 @@ module.exports = {
         beijoembed.setDescription(`❤️ ${message.author} beijou ${pessoa}`)
         beijoembed.setColor("#7a297a")
         beijoembed.setImage(randomchoice)
-        beijoembed.setThumbnail(message.author.displayAvatarURL({format:"jpeg"}))
+        beijoembed.setThumbnail(message.author.displayAvatarURL({format:"jpeg", dynamic: "true"}))
         message.channel.send({embeds: [beijoembed]})
     }
 }

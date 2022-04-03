@@ -25,7 +25,7 @@ module.exports = {
         spankembed.setDescription(`✋🍑 ${message.author} 😳 deu um tapa na bunda de  ${pessoa}`)
         spankembed.setColor("#7a297a")
         spankembed.setImage(randomchoice)
-        spankembed.setThumbnail(message.author.displayAvatarURL({format:"jpeg"}))
+        spankembed.setThumbnail(message.author.displayAvatarURL({format:"jpeg", dynamic: "true"}))
         message.channel.send({embeds: [spankembed]})
     }
 }

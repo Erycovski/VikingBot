@@ -2,8 +2,8 @@ const { channelMention } = require("@discordjs/builders")
 const Discord = require("discord.js")
 
 module.exports = {
-    name: "slap", 
-    aliases: ["tapa"], 
+    name: "tapa", 
+    aliases: ["slap"], 
 
     run: async(client, message, args) => {
         var list = [
@@ -24,7 +24,7 @@ module.exports = {
         tapaembed.setDescription(`😡 ${message.author} deu um tapa em ${pessoa}`)
         tapaembed.setColor("#7a297a")
         tapaembed.setImage(randomchoice)
-        tapaembed.setThumbnail(message.author.displayAvatarURL({format:"jpeg"}))
+        tapaembed.setThumbnail(message.author.displayAvatarURL({format:"jpeg", dynamic: "true"}))
         message.channel.send({embeds: [tapaembed]})
     }
 }
