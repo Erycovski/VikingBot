@@ -12,7 +12,9 @@ module.exports = {
            "https://c.tenor.com/qhdaIdgiV78AAAAC/anime-spank.gif",
            "https://c.tenor.com/gScnebhgJn4AAAAC/taritari-anime-spank.gif",
            "https://c.tenor.com/CAesvxP0KyEAAAAd/shinobu-kocho-giyuu-tomioka.gif",
-           "https://c.tenor.com/NOFCf_X5Hx8AAAAC/anime-girl.gif"
+           "https://c.tenor.com/NOFCf_X5Hx8AAAAC/anime-girl.gif",
+           "https://c.tenor.com/w84L2QE6lMEAAAAC/onizuka-spank.gif",
+           "https://c.tenor.com/IVOxJ3ZUtWgAAAAC/anime-ass-slap.gif",
         ]
 
         var randomchoice = list[Math.floor(Math.random() * list.length )]
@@ -25,7 +27,7 @@ module.exports = {
         spankembed.setDescription(`✋🍑 ${message.author} 😳 deu um tapa na bunda de  ${pessoa}`)
         spankembed.setColor("#7a297a")
         spankembed.setImage(randomchoice)
-        spankembed.setThumbnail(message.author.displayAvatarURL({format:"jpeg", dynamic: "true"}))
+        spankembed.setThumbnail(message.author.displayAvatarURL({size:1024, format:"jpeg", dynamic: "true"}))
         message.channel.send({embeds: [spankembed]})
     }
 }

@@ -56,7 +56,7 @@ module.exports = {
         sigmaembed.setTitle(`😎 Sigma`)
         sigmaembed.setColor("#7a297a")
         sigmaembed.setImage(randomchoice)
-        sigmaembed.setThumbnail(message.author.displayAvatarURL({format:"jpeg", dynamic: "true"}))
+        sigmaembed.setThumbnail(message.author.displayAvatarURL({size:1024, format:"jpeg", dynamic: "true"}))
         message.channel.send({embeds: [sigmaembed]})
     }
 }
