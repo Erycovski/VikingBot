@@ -13,7 +13,10 @@ module.exports = {
         "Com certeza!",
         "Sem chance!",
         "Com toda certeza!",
-        "Os Deuses precisam pensar mais!"
+        "Os Deuses precisam pensar mais!",
+        "Talvez em outra vida!"
+        
+             
       ]
 
         var randomchoice = list[Math.floor(Math.random() * list.length )]

@@ -39,13 +39,12 @@ module.exports = {
       },
       {
         name: "📅 Criado em",
-        value: new Date(createdAt).toLocaleDateString(),
+        value: new Date(createdAt).toLocaleDateString('pt-BR'),
         inline: true
       },
       {
         name: `💬 Canais (${geral})`,
-        value: `📝 Texto: ${chats}
-                🗣 Voz:    ${calls}`,
+        value: `📝 Texto: ${chats} \n 🗣 Voz:    ${calls}`,
         inline: true
       }
     )

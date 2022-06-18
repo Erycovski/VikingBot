@@ -30,12 +30,12 @@ module.exports = {
             },
             {
                 name: "📆 Data de criação da conta",
-                value: new Date(user.createdTimestamp).toLocaleDateString(),
+                value: new Date(user.createdTimestamp).toLocaleDateString('pt-BR'),
                 inline: true
             },
             {
                 name: "👋 Data que entrou no server",
-                value: new Date(member.joinedTimestamp).toLocaleDateString(),
+                value: new Date(member.joinedTimestamp).toLocaleDateString('pt-BR'),
                 inline: true
             },
 
