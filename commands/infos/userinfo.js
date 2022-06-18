@@ -3,16 +3,16 @@ const Discord = require("discord.js")
 
 
 module.exports = {
-    name: "userinfo", 
+    name: "userinfo",
 
 
-    run: async(client, message, args) => {
-      
-        let {guild} = message
+    run: async (client, message, args) => {
+
+        let { guild } = message
         let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author
         let member = guild.members.cache.get(user.id)
-            
-        let avatar = user.displayAvatarURL({fdynamic: "true"})
+
+        let avatar = user.displayAvatarURL({ dynamic: "true" })
 
         let userinfoembed = new MessageEmbed()
         userinfoembed.setColor("#7a297a")
@@ -38,12 +38,11 @@ module.exports = {
                 value: new Date(member.joinedTimestamp).toLocaleDateString(),
                 inline: true
             },
-            
+
         )
-        
-        message.reply({embeds: [userinfoembed]})
+
+        message.reply({ embeds: [userinfoembed] })
 
     }
 }
 
-   

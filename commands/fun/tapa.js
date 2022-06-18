@@ -1,11 +1,12 @@
-const { channelMention } = require("@discordjs/builders")
 const Discord = require("discord.js")
 
 module.exports = {
     name: "tapa", 
     aliases: ["slap"], 
 
-    run: async(client, message, args) => {
+    run: async(client, message, args, ) => {
+
+        
         var list = [
             "https://i.imgur.com/oOCq3Bt.gif",
             "https://i.imgur.com/Agwwaj6.gif",
@@ -36,5 +37,7 @@ module.exports = {
         tapaembed.setImage(randomchoice)
         tapaembed.setThumbnail(message.author.displayAvatarURL({size:1024, format:"jpeg", dynamic: "true"}))
         message.channel.send({embeds: [tapaembed]})
+
+        
     }
 }

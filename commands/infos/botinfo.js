@@ -1,13 +1,12 @@
-const { channelMention } = require("@discordjs/builders")
 const { MessageEmbed } = require('discord.js');
 const Discord = require("discord.js")
 
 module.exports = {
-    name: "botinfo", 
+    name: "botinfo",
 
 
-    run: async(client, message, args) => {
-        
+    run: async (client, message, args) => {
+
         let servers = client.guilds.cache.size
         let users = client.users.cache.size
         let ping = client.ws.ping
@@ -16,21 +15,21 @@ module.exports = {
         let prefix = "v!"
         let versiondiscord = "13.6.0"
 
-        const serverinfoembed = new MessageEmbed()
-        serverinfoembed.setAuthor({ name: client.user.username, iconURL: client.user.displayAvatarURL({dynamic: true})})
-        serverinfoembed.setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL({dynamic: true})})
-        serverinfoembed.setThumbnail(client.user.displayAvatarURL({dynamic:true}))
-        serverinfoembed.setColor("#7a297a")
-        serverinfoembed.setTimestamp(new Date)
-        serverinfoembed.setDescription(`👋 Olá ${message.author}, eu sou o bot ${client.user.username}! Meu prefixo é ${prefix}  \n
+        const botinfoembed = new MessageEmbed()
+        botinfoembed.setAuthor({ name: client.user.username, iconURL: client.user.displayAvatarURL({ dynamic: true }) })
+        botinfoembed.setFooter({ text: client.user.username, iconURL: client.user.displayAvatarURL({ dynamic: true }) })
+        botinfoembed.setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
+        botinfoembed.setColor("#7a297a")
+        botinfoembed.setTimestamp(new Date)
+        botinfoembed.setDescription(`👋 Olá ${message.author}, eu sou o bot ${client.user.username}! Meu prefixo é ${prefix}  \n
         Estou em ${servers}, servidores Atendendo a ${users} usuarios
         \\📜 Veja meus comandos com ${prefix}ajuda  
         \\  ping do bot esta em ${ping}
         \\ criado pelo ${dono} na verção ${versiondiscord} do Discord.Js, utilizando JavaScript  ❤️ `)
 
-        message.channel.send({embeds: [serverinfoembed]})
-        
-        
+        message.channel.send({ embeds: [botinfoembed] })
+
+
 
     }
 }
