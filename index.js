@@ -2,11 +2,9 @@ const { Client, Collection, Intents } = require('discord.js');
 const config = require('./config.json')
 const { token } = require('./config.json');
 const client = new Client({
-    partials: ["MESSAGE", "CHANNEL", "REACTION"],
+    partials: ["MESSAGE", "CHANNEL", "REACTION", "USER", "REACTION"],
     intents: 32767,
 })
-
-
 
 const fs = require("fs");
 
@@ -37,10 +35,7 @@ client.on("messageCreate", async (message) => {
       if (message.author.bot) return;
       if (message.channel.type == 'dm') return;     
   
-       if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
-    
-      if(message.author.bot) return;
-      if(message.channel.type === 'dm') return;
+      if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
   
       if(!message.content.startsWith(prefix)) return;
       const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -74,5 +69,11 @@ client.on("messageCreate", async (message) => {
         console.log(`O bot foi removido do servidor: ${guild.name} (id: ${guild.id})`)
         client.user.setActivity(`v!ajuda - Estou em ${client.guilds.cache.size} Servidores, atendendo a ${client.users.cache.size} Membros `)
     })
+
+    
+     setInterval(function () {client.user.setActivity(`${prefix}ajuda - Estou em ${client.guilds.cache.size} Servidores, atendendo a ${client.users.cache.size} Membros`)}, 172800000)
+
+  
+
 
 client.login(token);
