@@ -36,7 +36,12 @@ module.exports = {
         tapaembed.setColor("#7a297a")
         tapaembed.setImage(randomchoice)
         tapaembed.setThumbnail(message.author.displayAvatarURL({size:1024, format:"jpeg", dynamic: "true"}))
-        message.channel.send({embeds: [tapaembed]})
+
+        if (message.mentions.users.first() === message.author) {
+            message.reply(':x: | Se batendo?... 🤨')
+        } else {
+            message.channel.send({embeds: [tapaembed]})
+        }
 
         
     }

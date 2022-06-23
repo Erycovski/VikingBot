@@ -27,7 +27,14 @@ module.exports = {
         spankembed.setColor("#7a297a")
         spankembed.setImage(randomchoice)
         spankembed.setThumbnail(message.author.displayAvatarURL({size:1024, format:"jpeg", dynamic: "true"}))
-        message.channel.send({embeds: [spankembed]})
+       
+        if (message.mentions.users.first() === message.author) {
+            message.reply(':x: | Um tapa na propria bunda?... 🤔')
+        } else {
+            message.channel.send({embeds: [spankembed]})
+        }
+
+
     }
 }
 

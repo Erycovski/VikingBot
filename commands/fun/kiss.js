@@ -22,19 +22,29 @@ module.exports = {
            "https://c.tenor.com/UQwgkQbdp48AAAAC/kiss-anime.gif",
            "https://c.tenor.com/GGuBQ0Zb0FAAAAAM/anime-cute.gif",
         ]
-
+        
         var randomchoice = list[Math.floor(Math.random() * list.length )]
         let pessoa = message.mentions.users.first() || client.users.cache.get(args[0])
 
         if(!pessoa) return message.channel.send(`:x: | ${message.author} Mencione alguèm para beijar!`)
 
         let beijoembed = new Discord.MessageEmbed()
+        
         beijoembed.setTitle(`💋 Beijo`)
         beijoembed.setDescription(`❤️ ${message.author} beijou ${pessoa}`)
         beijoembed.setColor("#7a297a")
         beijoembed.setImage(randomchoice)
         beijoembed.setThumbnail(message.author.displayAvatarURL({size:1024,format:"jpeg", dynamic: "true"}))
-        message.channel.send({embeds: [beijoembed]})
-    }
+
+        if (message.mentions.users.first() === message.author) {
+            message.reply(':x: | O amor proprio é lindo! mas acho que nao é possivel se beijar 😞')
+        } else {
+            message.channel.send({embeds: [beijoembed]})
+        }
+        }
+
+
+
+      
 }
 

@@ -39,6 +39,13 @@ module.exports = {
         hugembed.setColor("#7a297a")
         hugembed.setImage(randomchoice)
         hugembed.setThumbnail(message.author.displayAvatarURL({size:1024,format:"jpeg", dynamic: "true"}))
-        message.channel.send({embeds: [hugembed]})
+       
+        if (message.mentions.users.first() === message.author) {
+            message.reply(':x: | Tentando se abraçar? eu te entendo mas infelizmente não é tão bom')
+        } else {
+            message.channel.send({embeds: [hugembed]})
+        }
+
+        
     }
 }
