@@ -32,6 +32,7 @@ module.exports = {
         var randomchoice = list[Math.floor(Math.random() * list.length)]
         var randomchoice2 = list[Math.floor(Math.random() * list.length)]
         let pessoa = message.mentions.users.first() || client.users.cache.get(args[0])
+        let id = Math.random() * 10
 
         if (!pessoa) return message.channel.send(`:x: | ${message.author} Mencione alguèm para dar um abraço!`)
 
@@ -48,7 +49,7 @@ module.exports = {
             const button = new Discord.MessageActionRow()
                 .addComponents(
                     new Discord.MessageButton()
-                        .setCustomId('1')
+                        .setCustomId(`${id}`)
                         .setLabel('Retribuir')
                         .setStyle('PRIMARY')
                         .setDisabled(false)
@@ -64,23 +65,22 @@ module.exports = {
             const row = new MessageActionRow()
                 .addComponents(
                     new MessageButton()
-                        .setCustomId('1')
+                        .setCustomId(`${id}`)
                         .setLabel('Retribuir')
                         .setStyle('PRIMARY')
                 )
 
-            const filter = i => i.customId === '1' && i.user.id === pessoa.id;
+            const filter = i => i.customId === `${id}` && i.user.id === pessoa.id;
 
             const collector = message.channel.createMessageComponentCollector({ filter, time: 600000 });
 
-            message.channel.send({ embeds: [hugembed], components: [row] })
+            await message.channel.send({ embeds: [hugembed], components: [row] })
 
             collector.on('collect', async i => {
-                if (i.customId === '1') {
+                if (i.customId === `${id}`) {
 
-                    await i.update({ content: 'clicled', components: [] });
-                    message.channel.send({ embeds: [embedRet] })
-
+                    await i.update({components: [] });
+                    await message.channel.send({ embeds: [embedRet] })
 
                 }
             });
